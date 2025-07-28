@@ -1,0 +1,59 @@
+.camActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7vh;
+}
+
+.camMode {
+  display: flex;
+}
+
+.video {
+  height: 90vh;
+}
+
+.videoParent {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.canvas {
+  display: none;
+}
+
+.photoData {
+  display: flex;
+  position: absolute;
+  overflow-x: scroll;
+  max-width: calc(120vh - 6px);
+  z-index: 10;
+  height: 120px;
+  bottom: 0px;
+  border: 3px solid black;
+  gap: 3px;
+  background-color: black;
+  left: calc(50vw - 60vh);
+}
+
+.photo {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.photo img {
+  height: 100%;
+}
+
+.photo video {
+  height: 100%;
+}
+
+.photoDelBtn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 30;
+}

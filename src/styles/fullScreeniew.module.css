@@ -1,0 +1,20 @@
+.fullScreenView {
+  position: absolute;
+  z-index: 20;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fullScreenView img {
+  height: 90vh;
+}
+
+.fullScreenView video {
+  height: 90vh;
+}
+
+.crossBtn {
+  position: absolute;
+  right: 0px;
+  z-index: 30;
+}
