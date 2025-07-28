@@ -27,7 +27,6 @@ function Camera() {
   >("inactive");
   const [stream, setStream] = useState<MediaStream | null>(null);
   const [videoChunks, setVideoChunks] = useState<Blob[]>([]);
-  const [recordedVideo, setRecordedVideo] = useState<string>("");
   const [display, setDisplay] = useState<{
     src: string;
     effectName: string;
@@ -100,7 +99,6 @@ function Camera() {
     if (videoChunks.length > 0 && recordingStatus === "inactive") {
       const videoBlob = new Blob(videoChunks, { type: mimeType });
       const videoUrl = URL.createObjectURL(videoBlob);
-      setRecordedVideo(videoUrl);
       setPhotos([
         ...photos,
         { src: videoUrl, effectName: "normal", type: "video" },
@@ -163,9 +161,9 @@ function Camera() {
     }
   };
 
-  function deletePhotoByIndex(index) {
+  function deletePhotoByIndex(index: number) {
     setPhotos(
-      photos.filter((photo, idx) => {
+      photos.filter((_photo, idx) => {
         if (index === idx) {
           return false;
         } else {
@@ -222,6 +220,7 @@ function Camera() {
                         }}
                         key={index}
                         src={photo.src}
+                        //@ts-expect-error configuring typescript
                         style={getEffectStyle(photo.effectName)}
                       />
                     )}
@@ -234,6 +233,7 @@ function Camera() {
             className={styles.video}
             ref={videoRef}
             autoPlay={true}
+            //@ts-expect-error configuring typescript
             style={getEffectStyle(currentEffect)}
           />
         </div>

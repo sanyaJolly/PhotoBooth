@@ -88,6 +88,7 @@ const Effect = (props: Props) => {
         autoPlay={true}
         muted={true}
         playsInline={true}
+        //@ts-expect-error configuring typescript
         style={getEffectStyle(props.name)}
       />
       <div className={styles.effectLabel}>{props.name}</div>
